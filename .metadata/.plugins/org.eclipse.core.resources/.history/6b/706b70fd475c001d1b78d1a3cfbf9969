@@ -1,0 +1,22 @@
+package com.gusta.bookstore;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.gusta.bookstore.domain.Categoria;
+
+@SpringBootApplication
+public class BookstoreApplication implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BookstoreApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		Categoria cat1 = new Categoria(null, "Informática", "Livros de TI");
+		
+	}
+
+}

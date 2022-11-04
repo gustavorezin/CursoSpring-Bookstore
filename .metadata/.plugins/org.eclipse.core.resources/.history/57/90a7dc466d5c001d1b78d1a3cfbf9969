@@ -1,0 +1,5 @@
+package com.gusta.bookstore.dto;
+
+public class CategoriaDTO {
+
+}

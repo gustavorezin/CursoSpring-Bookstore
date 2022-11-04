@@ -1,0 +1,5 @@
+package com.gusta.bookstore.service.exception;
+
+public class ObjectNotFoundException {
+
+}

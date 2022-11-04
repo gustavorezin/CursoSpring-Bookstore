@@ -1,0 +1,5 @@
+package com.gusta.bookstore.resource.exception;
+
+public class ResourceExceptionHandler {
+
+}

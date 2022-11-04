@@ -1,0 +1,5 @@
+package com.gusta.bookstore.config;
+
+public class DevConfig {
+
+}

@@ -1,0 +1,5 @@
+package com.gusta.bookstore.repository;
+
+public class LivroRepository {
+
+}
