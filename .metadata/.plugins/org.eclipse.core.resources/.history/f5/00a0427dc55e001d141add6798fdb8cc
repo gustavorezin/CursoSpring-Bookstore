@@ -1,0 +1,5 @@
+package com.gusta.bookstore.resource;
+
+public class LivroResource {
+
+}

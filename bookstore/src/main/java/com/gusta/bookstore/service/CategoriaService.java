@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.gusta.bookstore.domain.Categoria;
@@ -22,11 +23,11 @@ public class CategoriaService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! id: " + id + ", tipo: " + Categoria.class.getName()));
 	}
-	
+
 	public List<Categoria> findAll() {
 		return rp.findAll();
 	}
-	
+
 	public Categoria create(Categoria obj) {
 		obj.setId(null);
 		return rp.save(obj);
@@ -37,5 +38,16 @@ public class CategoriaService {
 		obj.setNome(objDTO.getNome());
 		obj.setDescricao(objDTO.getDescricao());
 		return rp.save(obj);
+	}
+
+	public void delete(Integer id) {
+		findById(id);
+
+		try {
+			rp.deleteById(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new com.gusta.bookstore.service.exception.DataIntegrityViolationException(
+					"Categoria não pode ser deletada. Possui livros associados!");
+		}
 	}
 }

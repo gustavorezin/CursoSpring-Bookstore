@@ -2,6 +2,10 @@ package com.gusta.bookstore.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import com.gusta.bookstore.domain.Categoria;
 
 public class CategoriaDTO implements Serializable {
@@ -9,7 +13,11 @@ public class CategoriaDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	@NotEmpty(message = "Campo 'nome' é obrigatório!")
+	@Length(min = 3, max = 60)
 	private String nome;
+	@NotEmpty(message = "Campo 'descricao' é obrigatório!")
+	@Length(min = 10, max = 200)
 	private String descricao;
 	
 	public CategoriaDTO() {
