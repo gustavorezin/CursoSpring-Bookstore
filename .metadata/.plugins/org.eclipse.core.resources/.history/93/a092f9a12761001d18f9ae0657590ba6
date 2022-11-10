@@ -1,5 +1,6 @@
 package com.gusta.bookstore.resource.exception;
 
+import javax.security.auth.x500.X500PrivateCredential;
 import javax.servlet.ServletRequest;
 
 import org.springframework.http.HttpStatus;
